@@ -1,3 +1,4 @@
+
 import Image from 'next/image'
 
 const projects = [
@@ -75,9 +76,11 @@ export default function KvanPage() {
             <div key={project.id} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <div className="aspect-w-16 aspect-h-12">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={800}
+                    height={600}
                     className="w-full h-64 object-cover"
                   />
                 </div>
