@@ -7,7 +7,21 @@
       "Bash(git add:*)",
       "Bash(git reset:*)",
       "Bash(mv:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "WebFetch(domain:kvan.ro)",
+      "Bash(mkdir:*)",
+      "Bash(node:*)",
+      "Bash(nvm install:*)",
+      "Bash(source:*)",
+      "Bash(brew install:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"/usr/local/opt/nvm/nvm.sh\" ])",
+      "Bash(. \"/usr/local/opt/nvm/nvm.sh\")",
+      "Bash(nvm use:*)",
+      "Bash(npm run dev:*)"
     ],
     "deny": []
   }
