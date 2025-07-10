@@ -27,28 +27,12 @@ const projects = [
     description: "Vilă exclusivă cu vedere la lac"
   },
   {
-    id: 4,
-    title: "Centru Cultural Urban",
-    category: "Public",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1587382559340-a5a4a2c2d338?w=800&h=600&fit=crop",
-    description: "Spațiu multifuncțional pentru evenimente culturale"
-  },
-  {
     id: 5,
     title: "Complex Rezidențial Green",
     category: "Rezidențial",
     year: "2021",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
     description: "Locuințe sustenabile cu certificare verde"
-  },
-  {
-    id: 6,
-    title: "Showroom Auto Premium",
-    category: "Comercial",
-    year: "2021",
-    image: "https://images.unsplash.com/photo-1567449303078-57ad995bd17f?w=800&h=600&fit=crop",
-    description: "Design modern pentru prezentarea automobilelor de lux"
   }
 ]
 
