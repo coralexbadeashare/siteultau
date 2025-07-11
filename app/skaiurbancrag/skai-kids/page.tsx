@@ -244,8 +244,8 @@ const SkaiKidsPage = () => {
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-12 text-center">
             <div className="text-6xl mb-6">🌟</div>
             <blockquote className="text-xl text-gray-700 italic mb-6">
-              "SKAI Kids a fost cea mai bună decizie pentru fiica mea. Nu doar că a învățat să escaladeze, 
-              dar a căpătat încredere, a făcut prieteni noi și abia așteaptă fiecare zi să vină aici!"
+              &ldquo;SKAI Kids a fost cea mai bună decizie pentru fiica mea. Nu doar că a învățat să escaladeze, 
+              dar a căpătat încredere, a făcut prieteni noi și abia așteaptă fiecare zi să vină aici!&rdquo;
             </blockquote>
             <cite className="text-gray-900 font-semibold">- Maria P., mamă</cite>
           </div>

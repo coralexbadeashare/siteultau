@@ -99,9 +99,9 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-4">Misiunea Noastră</h3>
             <p className="text-lg text-red-50">
-              "Să oferim cele mai bune servicii de suport tehnic pentru motorsport, 
+              &ldquo;Să oferim cele mai bune servicii de suport tehnic pentru motorsport, 
               permițând piloților să se concentreze pe ceea ce fac cel mai bine - să câștige curse. 
-              Succesul clienților noștri este succesul nostru."
+              Succesul clienților noștri este succesul nostru.&rdquo;
             </p>
           </div>
         </div>

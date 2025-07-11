@@ -1,4 +1,4 @@
-import { PartyPopper, Gift, Cake, Music, Camera, Clock, Users, Star } from 'lucide-react'
+import { PartyPopper, Gift, Cake, Camera, Clock, Users, Star } from 'lucide-react'
 import Link from 'next/link'
 
 const PetreceriPage = () => {
@@ -323,9 +323,9 @@ const PetreceriPage = () => {
           <div className="bg-white rounded-3xl shadow-xl p-12 text-center">
             <div className="text-6xl mb-6">🎉</div>
             <blockquote className="text-xl text-gray-700 italic mb-6">
-              "Cea mai reușită petrecere pe care am organizat-o vreodată! 
+              &ldquo;Cea mai reușită petrecere pe care am organizat-o vreodată! 
               Totul a fost perfect - de la decorațiuni la animatori. 
-              Copiii au fost în al nouălea cer!"
+              Copiii au fost în al nouălea cer!&rdquo;
             </blockquote>
             <cite className="text-gray-900 font-semibold">- Raluca T., mamă</cite>
             <div className="flex justify-center mt-2">

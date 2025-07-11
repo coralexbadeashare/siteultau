@@ -367,7 +367,7 @@ const PersonalPage = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
                 <div className="border-t border-orange-200 pt-4">
                   <p className="font-semibold text-gray-900">{testimonial.name}</p>
                   <p className="text-sm text-orange-600">{testimonial.achievement}</p>

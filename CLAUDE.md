@@ -29,7 +29,7 @@ npm run build        # Build for production
 npm run start        # Start production server
 
 # Quality Checks
-npm run lint         # Run ESLint
+npm run lint         # Run ESLint - ALWAYS run before committing
 
 # Package Management
 npm install [package] # Install new dependencies BEFORE using them
@@ -65,6 +65,80 @@ images: {
   }]
 }
 ```
+
+## Linting and Code Quality Rules
+
+### CRITICAL: Always run before committing
+```bash
+npm run lint         # Check for linting errors
+npm run build        # Ensure build succeeds
+```
+
+### Common ESLint Issues and Solutions
+
+1. **Unescaped quotes in JSX**
+   - Error: `react/no-unescaped-entities`
+   - Solution: Replace quotes with HTML entities
+   ```tsx
+   // ❌ Wrong
+   <p>"This is wrong"</p>
+   
+   // ✅ Correct
+   <p>&ldquo;This is correct&rdquo;</p>
+   <p>{`"This also works"`}</p>
+   ```
+
+2. **Using `<img>` instead of Next.js Image**
+   - Error: `@next/next/no-img-element`
+   - Solution: Use Next.js Image component
+   ```tsx
+   // ❌ Wrong
+   <img src="/image.jpg" alt="Description" />
+   
+   // ✅ Correct
+   import Image from 'next/image'
+   <Image src="/image.jpg" alt="Description" width={500} height={300} />
+   ```
+
+3. **Unused imports**
+   - Error: `@typescript-eslint/no-unused-vars`
+   - Solution: Remove any imports not used in the file
+   ```tsx
+   // ❌ Wrong
+   import { Calendar, Home } from 'lucide-react' // If Calendar not used
+   
+   // ✅ Correct
+   import { Home } from 'lucide-react' // Only import what you use
+   ```
+
+4. **Missing useEffect dependencies**
+   - Error: `react-hooks/exhaustive-deps`
+   - Solution: Include all dependencies in the array
+   ```tsx
+   // ❌ Wrong
+   useEffect(() => {
+     // code using slides.length
+   }, [currentSlide])
+   
+   // ✅ Correct
+   useEffect(() => {
+     // code using slides.length
+   }, [currentSlide, slides.length])
+   ```
+
+5. **TypeScript type errors with state**
+   - Error: `Element implicitly has an 'any' type because expression of type 'string' can't be used to index`
+   - Solution: Use explicit types for state that will be used as object keys
+   ```tsx
+   // ❌ Wrong
+   const [activeCategory, setActiveCategory] = useState('rally')
+   // TypeScript infers activeCategory as string
+   
+   // ✅ Correct
+   const [activeCategory, setActiveCategory] = useState<'rally' | 'circuit' | 'drift'>('rally')
+   // And when setting:
+   onClick={() => setActiveCategory(key as 'rally' | 'circuit' | 'drift')}
+   ```
 
 ## Common Development Tasks
 

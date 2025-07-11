@@ -1,4 +1,4 @@
-import { Check, Star, TrendingUp, Users, Calendar, CreditCard } from 'lucide-react'
+import { Check, Star, Users, CreditCard } from 'lucide-react'
 import Link from 'next/link'
 
 const TarifePage = () => {

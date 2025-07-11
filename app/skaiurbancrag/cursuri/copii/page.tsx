@@ -310,7 +310,7 @@ const CopiiPage = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-500" fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-gray-700 italic mb-4">"{testimonial.text}"</p>
+                <p className="text-gray-700 italic mb-4">&ldquo;{testimonial.text}&rdquo;</p>
                 <p className="font-semibold text-gray-900">- {testimonial.parent}</p>
               </div>
             ))}

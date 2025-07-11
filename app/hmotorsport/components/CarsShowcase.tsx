@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Car, Gauge, Settings, ArrowRight } from 'lucide-react'
 
 const CarsShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('rally')
+  const [activeCategory, setActiveCategory] = useState<'rally' | 'circuit' | 'drift'>('rally')
 
   const categories = {
     rally: {
@@ -79,7 +79,7 @@ const CarsShowcase = () => {
           {Object.entries(categories).map(([key, category]) => (
             <button
               key={key}
-              onClick={() => setActiveCategory(key)}
+              onClick={() => setActiveCategory(key as 'rally' | 'circuit' | 'drift')}
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 activeCategory === key
                   ? 'bg-red-600 text-white shadow-lg shadow-red-600/25'

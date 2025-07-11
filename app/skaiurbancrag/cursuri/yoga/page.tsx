@@ -304,7 +304,7 @@ const YogaPage = () => {
                 <p className="text-pink-600 font-medium mb-4">{instructor.certification}</p>
                 <p className="text-gray-700 mb-4">{instructor.experience}</p>
                 <blockquote className="italic text-gray-600 border-l-4 border-pink-500 pl-4">
-                  "{instructor.philosophy}"
+                  &ldquo;{instructor.philosophy}&rdquo;
                 </blockquote>
               </div>
             </div>

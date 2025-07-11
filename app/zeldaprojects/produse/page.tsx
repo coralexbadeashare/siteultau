@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Package, Leaf, Factory, Coffee, Filter, Search, ArrowRight } from 'lucide-react'
+import { Package, Leaf, Factory, Coffee, Search, ArrowRight } from 'lucide-react'
 
 const ProductsPage = () => {
   const [activeFilter, setActiveFilter] = useState('all')

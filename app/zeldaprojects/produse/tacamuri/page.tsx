@@ -1,6 +1,5 @@
 import { Leaf, ArrowLeft, ShoppingCart, Info, Package, Recycle, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const TacamuriPage = () => {
   const products = [

@@ -1,4 +1,4 @@
-import { Clock, Bus, Apple, BookOpen, Users, Calendar, CheckCircle, Heart } from 'lucide-react'
+import { Clock, Bus, Apple, BookOpen, Users, CheckCircle, Heart } from 'lucide-react'
 import Link from 'next/link'
 
 const AfterSchoolPage = () => {
@@ -307,9 +307,9 @@ const AfterSchoolPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-xl p-12">
             <blockquote className="text-xl text-gray-700 italic mb-6 text-center">
-              "Programul After School de la SKAI a fost salvarea noastră! 
+              &ldquo;Programul After School de la SKAI a fost salvarea noastră! 
               Copiii sunt preluați în siguranță, își fac temele cu ajutor calificat 
-              și se întorc acasă obosiți dar fericiți după escaladă. Recomand cu căldură!"
+              și se întorc acasă obosiți dar fericiți după escaladă. Recomand cu căldură!&rdquo;
             </blockquote>
             <div className="text-center">
               <cite className="text-gray-900 font-semibold">- Andreea M., mamă a doi copii</cite>

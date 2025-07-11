@@ -1,5 +1,4 @@
-import { Award, Target, Users, Leaf, TrendingUp, Calendar, CheckCircle, Star } from 'lucide-react'
-import Image from 'next/image'
+import { Award, Target, Users, Leaf, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
 const AboutPage = () => {

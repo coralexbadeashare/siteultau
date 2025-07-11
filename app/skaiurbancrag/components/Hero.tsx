@@ -39,7 +39,7 @@ const Hero = () => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [slides.length])
 
   const stats = [
     { icon: <Mountain className="w-6 h-6" />, value: '500m²', label: 'Suprafață Cățărare' },

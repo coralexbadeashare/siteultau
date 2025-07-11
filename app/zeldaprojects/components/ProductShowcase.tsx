@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Package, Leaf, Factory, Coffee } from 'lucide-react'
 
 const ProductShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('tuburi')
+  const [activeCategory, setActiveCategory] = useState<'tuburi' | 'ecologice' | 'catering'>('tuburi')
 
   const categories = {
     tuburi: {
@@ -96,7 +96,7 @@ const ProductShowcase = () => {
           {Object.entries(categories).map(([key, category]) => (
             <button
               key={key}
-              onClick={() => setActiveCategory(key)}
+              onClick={() => setActiveCategory(key as 'tuburi' | 'ecologice' | 'catering')}
               className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all ${
                 activeCategory === key
                   ? 'bg-green-600 text-white shadow-lg scale-105'

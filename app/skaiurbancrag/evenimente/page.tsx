@@ -1,4 +1,4 @@
-import { Trophy, Calendar, Users, MapPin, Clock, Star, Ticket, ArrowRight } from 'lucide-react'
+import { Trophy, Calendar, Users, Clock, Star, Ticket, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const EvenimentePage = () => {

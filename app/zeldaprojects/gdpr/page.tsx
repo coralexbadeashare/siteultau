@@ -90,7 +90,7 @@ const GDPRPage = () => {
           <div className="prose prose-lg max-w-none text-gray-700">
             <p>
               Această politică de confidențialitate descrie modul în care ZELDA PROJECTS SRL 
-              („noi", „nouă" sau „nostru") colectează, utilizează, stochează și protejează 
+              (&ldquo;noi&rdquo;, &ldquo;nouă&rdquo; sau &ldquo;nostru&rdquo;) colectează, utilizează, stochează și protejează 
               informațiile personale ale utilizatorilor site-ului nostru web și ale clienților noștri.
             </p>
           </div>
