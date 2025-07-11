@@ -7,7 +7,6 @@ import { Menu, X, ChevronDown, Phone, Mountain } from 'lucide-react'
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +49,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-gradient-to-b from-black/50 to-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -82,31 +81,23 @@ const Navigation = () => {
                       className={`flex items-center space-x-1 font-medium transition-colors py-2 ${
                         scrolled ? 'text-gray-700 hover:text-orange-600' : 'text-white hover:text-orange-400'
                       }`}
-                      onMouseEnter={() => setDropdownOpen(item.name)}
-                      onMouseLeave={() => setDropdownOpen('')}
                     >
                       <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                     </button>
                     
-                    {dropdownOpen === item.name && (
-                      <div 
-                        className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg mt-2 py-2"
-                        onMouseEnter={() => setDropdownOpen(item.name)}
-                        onMouseLeave={() => setDropdownOpen('')}
-                      >
-                        {item.items.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                          >
-                            <span className="text-xl">{subItem.icon}</span>
-                            <span>{subItem.name}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg mt-2 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      {item.items.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          <span className="text-xl">{subItem.icon}</span>
+                          <span>{subItem.name}</span>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ) : (
                   <Link
