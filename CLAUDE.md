@@ -10,6 +10,14 @@ Before importing any package that is not already in package.json, you MUST:
 2. If not present, run `npm install [package-name]` BEFORE creating any files that import it
 3. Common packages that need installation: lucide-react, framer-motion, react-hook-form, etc.
 
+### ALWAYS IMPORT REQUIRED MODULES
+When using any component or function, ALWAYS ensure it is properly imported:
+1. Next.js components: `import Link from 'next/link'`, `import Image from 'next/image'`
+2. React hooks: Must import from 'react' when using useState, useEffect, etc.
+3. Custom components: Import from correct relative paths
+4. Third-party libraries: Import according to their documentation
+5. NEVER use components without importing them first
+
 ## Commands
 
 ```bash
