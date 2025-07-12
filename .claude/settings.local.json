@@ -30,7 +30,15 @@
       "WebFetch(domain:skaiurbancrag.ro)",
       "Bash(npm run lint)",
       "WebFetch(domain:edaconsultcluj.wixsite.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:www.promacomprod.ro)",
+      "WebFetch(domain:www.agressione.ro)",
+      "WebFetch(domain:oasis-expres.ro)",
+      "WebFetch(domain:transportmarfaincluj.ro)",
+      "WebFetch(domain:camperservice.ro)",
+      "Bash(echo $?)",
+      "WebFetch(domain:welmius.ro)",
+      "Bash(npx tsc:*)"
     ],
     "deny": []
   }
