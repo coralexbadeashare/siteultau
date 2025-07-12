@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   ArrowLeft, Grid, List, Filter, Search, Star, 
-  ShoppingCart, Heart, Eye, ChevronDown
+  ShoppingCart, Heart, Eye
 } from 'lucide-react'
 
 export default function CategoryPage() {

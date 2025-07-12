@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronRight, Wrench, Shield, Clock, Users, Star, ArrowRight, Truck, Package } from 'lucide-react'
+import { ChevronRight, Wrench, Shield, Clock, Star, ArrowRight, Truck, Package, Phone } from 'lucide-react'
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)

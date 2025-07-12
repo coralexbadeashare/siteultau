@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Calendar, Users, Car, Info, CheckCircle, ArrowRight } from 'lucide-react'
+import { Phone, MapPin, Clock, Car, Info, CheckCircle, ArrowRight } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

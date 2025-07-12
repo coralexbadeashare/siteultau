@@ -17,6 +17,8 @@ When using any component or function, ALWAYS ensure it is properly imported:
 3. Custom components: Import from correct relative paths
 4. Third-party libraries: Import according to their documentation
 5. NEVER use components without importing them first
+6. CRITICAL: Before using ANY component (e.g., Phone, Truck, Wrench), verify it's imported
+7. For lucide-react icons: Use correct names (e.g., SprayCan not Spray)
 
 ### CRITICAL CSS IMPORT RULES
 When creating a new website subdirectory in the app folder:
@@ -88,9 +90,17 @@ images: {
 
 ### CRITICAL: Always run before committing
 ```bash
-npm run lint         # Check for linting errors
-npm run build        # Ensure build succeeds
+npm run lint         # Check for linting errors - MUST pass with 0 errors
+npm run build        # Ensure build succeeds - MUST complete without errors
 ```
+
+### Build Error Prevention Checklist
+Before ANY commit or deployment:
+1. Run `npm run lint` and fix ALL errors (not just warnings)
+2. Check for undefined component usage (e.g., using Phone without importing it)
+3. Remove ALL unused imports - ESLint will fail the build otherwise
+4. Verify all lucide-react icon names are correct (e.g., SprayCan not Spray)
+5. If build fails on Vercel, it's usually due to ESLint errors that must be fixed
 
 ### Styling Rules and Best Practices
 
@@ -115,6 +125,42 @@ Instead, use inline styles or CSS classes:
      onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
      onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
 ```
+
+## CRITICAL: Common Build Failures and Prevention
+
+### Most Common Vercel Build Failures
+1. **Undefined components** - Using a component without importing it
+   - ALWAYS import before use: `import { Phone, Truck, Wrench } from 'lucide-react'`
+   - Build will fail with: `'ComponentName' is not defined`
+
+2. **Unused imports** - Importing but not using components
+   - Remove ALL unused imports before committing
+   - Build will fail with: `'ComponentName' is defined but never used`
+
+3. **Wrong icon names** - Using incorrect lucide-react icon names
+   - Use correct names: `SprayCan` not `Spray`
+   - Build will fail with: `Attempted import error: 'IconName' is not exported`
+
+4. **Unused destructured variables**
+   - Only destructure what you use: `const [items] = useState()` not `const [items, setItems]`
+   - Build will fail with: `'setItems' is assigned a value but never used`
+
+### Pre-commit Checklist
+\u2705 Run `npm run lint` - MUST show 0 errors
+\u2705 Run `npm run build` - MUST complete successfully
+\u2705 Check all imports are used
+\u2705 Check all used components are imported
+\u2705 Verify lucide-react icon names
+
+### TypeScript Build Errors
+1. **Property does not exist on type** - Use proper type checking
+   ```tsx
+   // ❌ Wrong - TypeScript can't infer optional properties
+   {detail.href ? <a href={detail.href}>...</a> : null}
+   
+   // ✅ Correct - Use 'in' operator for type narrowing
+   {'href' in detail && detail.href ? <a href={detail.href}>...</a> : null}
+   ```
 
 ## Common ESLint Issues and Solutions
 
@@ -151,6 +197,14 @@ Instead, use inline styles or CSS classes:
    
    // ✅ Correct
    import { Home } from 'lucide-react' // Only import what you use
+   ```
+   - IMPORTANT: This includes unused destructured variables:
+   ```tsx
+   // ❌ Wrong
+   const [cartItems, setCartItems] = useState([]) // If setCartItems never used
+   
+   // ✅ Correct
+   const [cartItems] = useState([]) // Only destructure what you use
    ```
 
 4. **Missing useEffect dependencies**
@@ -195,6 +249,14 @@ Icons come from lucide-react (already installed):
 ```tsx
 import { Home, Menu, X } from 'lucide-react'
 ```
+
+**CRITICAL lucide-react icon rules:**
+1. ALWAYS verify icon name exists in lucide-react before using
+2. Common naming differences:
+   - Use `SprayCan` not `Spray`
+   - Use `ChevronDown` not `ChevronDown` (case sensitive)
+3. If unsure about an icon name, check https://lucide.dev/icons/
+4. Import errors with barrel optimization may occur - ensure exact icon names
 
 ### Styling
 Use Tailwind CSS classes directly in components. Tailwind v4 is configured and ready.

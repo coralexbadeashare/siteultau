@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Wind, Wifi, Droplets, Home, Zap, Sun, Flame, 
-  Snowflake, Wrench, Package, Shield, Spray,
-  Grid, List, Search, Filter, ChevronRight
+  Snowflake, Wrench, Package, Shield, SprayCan,
+  Grid, List, Search, Filter, ChevronRight, Truck
 } from 'lucide-react'
 
 export default function ShopPage() {
@@ -73,7 +73,7 @@ export default function ShopPage() {
     {
       id: 'igienizare',
       name: 'Igienizare și Întreținere',
-      icon: Spray,
+      icon: SprayCan,
       count: 26,
       image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=300&fit=crop',
       description: 'Produse de curățare și întreținere'
@@ -269,7 +269,6 @@ export default function ShopPage() {
           ) : (
             <div className="space-y-4">
               {filteredCategories.map((category) => {
-                const Icon = category.icon
                 return (
                   <Link
                     key={category.id}

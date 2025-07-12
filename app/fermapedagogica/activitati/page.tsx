@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Users, Palette, Sun, Calendar, Clock, ArrowRight, Check, Star, Sparkles } from 'lucide-react'
+import { Users, Palette, Sun, Calendar, Clock, ArrowRight, Check, Star, Sparkles, Heart } from 'lucide-react'
 import { useState } from 'react'
 
 export default function ActivitatiPage() {

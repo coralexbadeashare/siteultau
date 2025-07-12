@@ -89,7 +89,7 @@ export default function ContactPage() {
                   {info.details.map((detail, idx) => (
                     <div key={idx}>
                       <p className="text-sm text-gray-600">{detail.label}</p>
-                      {detail.href ? (
+                      {'href' in detail && detail.href ? (
                         <a href={detail.href} className="text-blue-600 hover:text-blue-700 font-medium">
                           {detail.value}
                         </a>

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { 
-  Users, Award, Shield, Wrench, Star, 
-  Target, Heart, Lightbulb, CheckCircle
+  Award, Shield, Star, 
+  Target, Heart, Lightbulb
 } from 'lucide-react'
 
 export default function AboutPage() {

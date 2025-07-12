@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, ShoppingCart, User, ChevronDown, Wrench, Phone } from 'lucide-react'
+import { Menu, X, ShoppingCart, User, Wrench, Phone } from 'lucide-react'
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [cartItems, setCartItems] = useState(0)
+  const [cartItems] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
