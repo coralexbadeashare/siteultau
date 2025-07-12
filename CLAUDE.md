@@ -18,6 +18,24 @@ When using any component or function, ALWAYS ensure it is properly imported:
 4. Third-party libraries: Import according to their documentation
 5. NEVER use components without importing them first
 
+### CRITICAL CSS IMPORT RULES
+When creating a new website subdirectory in the app folder:
+1. ALWAYS import the global CSS file in the layout.tsx file
+2. The correct import path from any subdirectory is: `import "../globals.css"`
+3. Without this import, the site will have NO STYLING AT ALL
+4. Double-check the import path is correct - it should point to app/globals.css
+5. If creating nested layouts, ensure the parent layout imports globals.css
+
+### CRITICAL LAYOUT AND HYDRATION RULES
+To prevent Next.js hydration errors:
+1. NEVER include `<html>` or `<body>` tags in subdirectory layouts (e.g., app/website/layout.tsx)
+2. The root layout (app/layout.tsx) already provides these tags
+3. Subdirectory layouts should return a `<div>` or fragment as the root element
+4. Apply body-level styles to a wrapper div instead: `<div className="bg-black text-white min-h-screen">`
+5. Avoid using browser-only APIs (window, document) in initial render
+6. Don't use Math.random() or Date.now() in component render
+7. Ensure consistent server/client rendering by avoiding conditional rendering based on `typeof window`
+
 ## Commands
 
 ```bash
