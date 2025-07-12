@@ -74,7 +74,31 @@ npm run lint         # Check for linting errors
 npm run build        # Ensure build succeeds
 ```
 
-### Common ESLint Issues and Solutions
+### Styling Rules and Best Practices
+
+### CRITICAL: Never use styled-jsx in Server Components
+styled-jsx (the `<style jsx>` syntax) only works in Client Components. Since Next.js 13+ uses Server Components by default, you must either:
+1. Add `'use client'` directive at the top of the file if you need styled-jsx
+2. Use inline styles or CSS modules instead (preferred for Server Components)
+3. For hover effects and dynamic styles in Server Components, use inline styles with event handlers
+
+Example of what NOT to do in Server Components:
+```tsx
+// ❌ This will cause a build error in Server Components
+<style jsx>{`
+  .card:hover { transform: translateY(-5px); }
+`}</style>
+```
+
+Instead, use inline styles or CSS classes:
+```tsx
+// ✅ Use inline styles for Server Components
+<div style={{ transition: 'all 0.3s ease' }} 
+     onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+     onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+```
+
+## Common ESLint Issues and Solutions
 
 1. **Unescaped quotes in JSX**
    - Error: `react/no-unescaped-entities`
@@ -156,3 +180,34 @@ import { Home, Menu, X } from 'lucide-react'
 
 ### Styling
 Use Tailwind CSS classes directly in components. Tailwind v4 is configured and ready.
+
+## Navigation Component Best Practices
+
+### Hover Dropdowns
+Use CSS-based hover with Tailwind's `group` classes instead of JavaScript state:
+```tsx
+// ✅ Correct - CSS hover approach
+<div className="relative group">
+  <button className="...">
+    Menu Item
+    <ChevronDown className="transition-transform group-hover:rotate-180" />
+  </button>
+  <div className="absolute opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+    {/* Dropdown content */}
+  </div>
+</div>
+
+// ❌ Wrong - JavaScript state approach (causes flicker)
+onMouseEnter={() => setDropdownOpen(true)}
+onMouseLeave={() => setDropdownOpen(false)}
+```
+
+### Text Contrast on Transparent Navbars
+When navbar is transparent over hero images, ensure text remains visible:
+```tsx
+// ✅ Correct - Add subtle gradient for contrast
+className={scrolled ? 'bg-white/95' : 'bg-gradient-to-b from-black/50 to-transparent'}
+
+// ❌ Wrong - Pure transparent can cause white-on-white text
+className={scrolled ? 'bg-white/95' : 'bg-transparent'}
+```

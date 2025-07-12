@@ -28,7 +28,9 @@
       "Bash(npm install:*)",
       "WebFetch(domain:hmotorsport.ro)",
       "WebFetch(domain:skaiurbancrag.ro)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "WebFetch(domain:edaconsultcluj.wixsite.com)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }
