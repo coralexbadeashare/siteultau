@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Award, Users, BookOpen, CheckCircle } from 'lucide-react'
+import { ArrowRight, Award, Users, BookOpen } from 'lucide-react'
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)

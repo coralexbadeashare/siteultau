@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Brain, Heart, Users, Award, Shield, Target, Clock, ArrowRight, CheckCircle } from 'lucide-react'
+import { Brain, Heart, Award, Shield, Target, Clock, CheckCircle } from 'lucide-react'
 
 export default function ServiciiPage() {
   const [activeCategory, setActiveCategory] = useState<'psihoterapie' | 'consiliere' | 'evaluare'>('psihoterapie')
@@ -129,7 +129,7 @@ export default function ServiciiPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-600 to-purple-800 py-20 md:py-32">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%229C92AC%22 fill-opacity=%220.1%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -188,7 +188,7 @@ export default function ServiciiPage() {
                   Condiții Tratate
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {currentService.conditions?.map((condition, index) => (
+                  {'conditions' in currentService && currentService.conditions?.map((condition, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">{condition.name}</h4>
                       <ul className="space-y-1">
@@ -209,7 +209,7 @@ export default function ServiciiPage() {
                   Beneficiile Terapiei
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                  {currentService.benefits?.map((benefit, index) => (
+                  {'benefits' in currentService && currentService.benefits?.map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <Target className="h-6 w-6 text-purple-600 flex-shrink-0" />
                       <span className="text-gray-700">{benefit}</span>
@@ -228,7 +228,7 @@ export default function ServiciiPage() {
                   Arii de Intervenție
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {currentService.areas?.map((area, index) => (
+                  {'areas' in currentService && currentService.areas?.map((area, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">{area.name}</h4>
                       <ul className="space-y-1">
@@ -249,7 +249,7 @@ export default function ServiciiPage() {
                   Procesul de Consiliere
                 </h3>
                 <div className="max-w-3xl mx-auto">
-                  {currentService.process?.map((step, index) => (
+                  {'process' in currentService && currentService.process?.map((step, index) => (
                     <div key={index} className="flex items-center space-x-4 mb-4">
                       <div className="flex-shrink-0 w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center font-semibold">
                         {index + 1}
@@ -270,7 +270,7 @@ export default function ServiciiPage() {
                   Tipuri de Evaluare
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {currentService.types?.map((type, index) => (
+                  {'types' in currentService && currentService.types?.map((type, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                       <h4 className="text-lg font-semibold text-gray-900 mb-3">{type.name}</h4>
                       <ul className="space-y-2">
@@ -291,7 +291,7 @@ export default function ServiciiPage() {
                   Instrumente Utilizate
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                  {currentService.instruments?.map((instrument, index) => (
+                  {'instruments' in currentService && currentService.instruments?.map((instrument, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <Award className="h-6 w-6 text-blue-600 flex-shrink-0" />
                       <span className="text-gray-700">{instrument}</span>
