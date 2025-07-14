@@ -44,7 +44,8 @@
       "mcp__browser-tools__takeScreenshot",
       "WebFetch(domain:bogartconstruct.ro)",
       "WebFetch(domain:next.bogartconstruct.ro)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "WebFetch(domain:www.amillaria.ro)"
     ],
     "deny": []
   }
