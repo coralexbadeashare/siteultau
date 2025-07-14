@@ -38,7 +38,13 @@
       "WebFetch(domain:camperservice.ro)",
       "Bash(echo $?)",
       "WebFetch(domain:welmius.ro)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:napocainstal.ro)",
+      "WebFetch(domain:www.bogartconstruct.ro)",
+      "mcp__browser-tools__takeScreenshot",
+      "WebFetch(domain:bogartconstruct.ro)",
+      "WebFetch(domain:next.bogartconstruct.ro)",
+      "Bash(npm run lint:*)"
     ],
     "deny": []
   }
