@@ -157,7 +157,7 @@ export default function PromotionsManagement() {
     <div className="min-h-screen bg-gray-50 flex">
       <AdminSidebar />
       
-      <div className="flex-1 ml-64">
+      <div className="flex-1">
         <AdminHeader />
         
         <main className="p-8">
