@@ -45,7 +45,10 @@
       "WebFetch(domain:bogartconstruct.ro)",
       "WebFetch(domain:next.bogartconstruct.ro)",
       "Bash(npm run lint:*)",
-      "WebFetch(domain:www.amillaria.ro)"
+      "WebFetch(domain:www.amillaria.ro)",
+      "WebFetch(domain:www.bellachicstudio.ro)",
+      "Bash(grep:*)",
+      "Bash(python3:*)"
     ],
     "deny": []
   }

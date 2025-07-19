@@ -117,3 +117,154 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Blob animation for background effects */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom focus styles for forms */
+.focus-ring:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: rgb(236 72 153);
+  ring-offset: 2px;
+}
+
+/* Input text contrast improvements - FORCE OVERRIDE ALL */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+  color: #000000 !important; /* Black text for maximum contrast */
+  background-color: #fdf4ff !important; /* very light purple background */
+  transition: all 0.2s ease !important;
+  -webkit-text-fill-color: #000000 !important; /* Force Safari */
+}
+
+/* Input focus states */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  color: #000000 !important; /* Black text on focus too */
+  background-color: #ffffff !important; /* pure white on focus */
+  -webkit-text-fill-color: #000000 !important; /* Force Safari */
+  border-color: #ec4899 !important; /* pink-500 border on focus */
+}
+
+/* Select option contrast - Safari specific fixes */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23db2777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+select option {
+  color: #000000 !important; /* Black text for options */
+  background-color: #ffffff !important; /* White background for options */
+  -webkit-text-fill-color: #000000 !important;
+}
+
+select option:disabled {
+  color: #9ca3af !important; /* gray-400 for disabled */
+}
+
+/* Force text color in Safari */
+select:not([multiple]) {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Ensure placeholder text is visible but lighter */
+input::placeholder,
+textarea::placeholder {
+  color: #e9d5ff !important; /* text-purple-200 - light purple for placeholders */
+  opacity: 0.8 !important;
+  -webkit-text-fill-color: #e9d5ff !important;
+}
+
+/* Dark mode input text contrast */
+@media (prefers-color-scheme: dark) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="search"],
+  input[type="url"],
+  textarea,
+  select {
+    color: #000000 !important; /* Black text even in dark mode for contrast */
+    background-color: #fdf4ff !important; /* Keep light purple background */
+    -webkit-text-fill-color: #000000 !important;
+  }
+  
+  select:not([multiple]) {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+  
+  select option {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af !important; /* text-gray-400 - medium gray for placeholders */
+    -webkit-text-fill-color: #9ca3af !important;
+  }
+}
